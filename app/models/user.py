@@ -1,0 +1,8 @@
+class User:
+    def __init__(self, id, user_id, first_name, last_name, email, password):
+        self.id = id
+        self.user_id = user_id
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.password = password

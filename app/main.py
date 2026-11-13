@@ -15,7 +15,7 @@ def home():
     return {
         "app": "ReachRich",
         "message": "Welcome to ReachRich!",
-        "status": "running",
+        "version": "1.0.0",
     }
 
 

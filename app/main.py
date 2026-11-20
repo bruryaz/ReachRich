@@ -1,6 +1,7 @@
 
 from fastapi import FastAPI
 
+from app.api.auth import router as auth_router
 from app.core.database import get_client
 
 app = FastAPI(
@@ -8,6 +9,8 @@ app = FastAPI(
     description="Smart Personal Financial Management",
     version="1.0.0",
 )
+
+app.include_router(auth_router)
 
 
 @app.get("/")
@@ -28,8 +31,8 @@ def health_check():
         return {"status": "unhealthy", "database": "supabase", "error": str(exc)}
 
 
-@app.get("/todos")
-def get_todos():
+@app.get("/transactions")
+def get_transactions():
     client = get_client()
-    response = client.table("todos").select("*").execute()
+    response = client.table("transactions").select("*").execute()
     return response.data

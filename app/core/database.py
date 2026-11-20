@@ -22,6 +22,10 @@ def get_supabase_client() -> Client:
     return create_client(url, key)
 
 
+def get_auth_client() -> Client:
+    return get_supabase_client()
+
+
 supabase: Client | None = None
 
 

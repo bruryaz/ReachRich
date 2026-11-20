@@ -12,9 +12,8 @@ class AuthCredentials(BaseModel):
 
 
 class RegisterRequest(AuthCredentials):
-    first_name: str | None = Field(default=None, max_length=100)
-    last_name: str | None = Field(default=None, max_length=100)
-
+    first_name: str = Field(min_length=1, max_length=100)
+    last_name: str = Field(min_length=1, max_length=100)
 
 class LoginRequest(AuthCredentials):
     pass

@@ -1,6 +1,4 @@
-
 from fastapi import FastAPI
-
 from app.api.auth import router as auth_router
 from app.core.database import get_client
 
@@ -9,7 +7,6 @@ app = FastAPI(
     description="Smart Personal Financial Management",
     version="1.0.0",
 )
-
 app.include_router(auth_router)
 
 
